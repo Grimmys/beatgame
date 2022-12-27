@@ -1,8 +1,11 @@
+# Generic game information
+GAME_TITLE = "BEATGAME"
+
 # Display configuration
-DISP_TIT = "BEATGAME"
-DISP_ICO = "assets/images/stand.png"
-DISP_WID = 800
-DISP_HEI = 500
+WINDOW_TITLE = GAME_TITLE
+DISPLAY_ICON = "assets/images/stand.png"
+WINDOW_WIDTH = 800
+WINDOW_HEIGHT = 500
 BASE_FPS = 60
 
 # Font configuration
@@ -15,10 +18,10 @@ FONT_SIZE_BIG = 64
 resize = None
 
 # Main Menu / Title
-GAME_TITLE = ">BEATGAME<"
+MAIN_MENU_TITLE = f">{GAME_TITLE}<"
 GAME_AUTHOR = "bydariogamer"
 GAME_AUTHOR2 = "Sogolumbo"
-MENU_BACKGROUND = "assets/images/title_background.png"
+MAIN_MENU_BACKGROUND = "assets/images/title_background.png"
 
 HELP_IMAGE = "assets/images/help.png"
 

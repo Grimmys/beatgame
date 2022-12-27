@@ -35,7 +35,7 @@ class Player:
 
         self.rect = self.images["stand"].get_rect()
         self.rect.x = config.PLAYER_POS_X
-        self.floor = config.DISP_HEI - config.FLOOR_HEIGHT - self.rect.height
+        self.floor = config.WINDOW_HEIGHT - config.FLOOR_HEIGHT - self.rect.height
         self.rect.y = self.floor
 
         self.vel_x = 0
@@ -56,14 +56,14 @@ class Player:
         for _ in range(config.STARS_COUNT):
             self.stars.append(
                 [
-                    int(random.uniform(0, config.DISP_WID)),
-                    int(random.uniform(0, config.DISP_HEI - config.FLOOR_HEIGHT)),
+                    int(random.uniform(0, config.WINDOW_WIDTH)),
+                    int(random.uniform(0, config.WINDOW_HEIGHT - config.FLOOR_HEIGHT)),
                 ]
             )
             self.stars.append(
                 [
-                    int(random.uniform(0, config.DISP_WID)) + config.DISP_WID,
-                    int(random.uniform(0, config.DISP_HEI - config.FLOOR_HEIGHT)),
+                    int(random.uniform(0, config.WINDOW_WIDTH)) + config.WINDOW_WIDTH,
+                    int(random.uniform(0, config.WINDOW_HEIGHT - config.FLOOR_HEIGHT)),
                 ]
             )
 
@@ -135,9 +135,9 @@ class Player:
                 for _ in range(config.STARS_COUNT):
                     self.stars.append(
                         [
-                            int(random.uniform(0, config.DISP_WID)) + config.DISP_WID,
+                            int(random.uniform(0, config.WINDOW_WIDTH)) + config.WINDOW_WIDTH,
                             int(
-                                random.uniform(0, config.DISP_HEI - config.FLOOR_HEIGHT)
+                                random.uniform(0, config.WINDOW_HEIGHT - config.FLOOR_HEIGHT)
                             ),
                         ]
                     )
@@ -164,8 +164,8 @@ class Player:
             (255, 240, 240),
             (
                 0,
-                config.DISP_HEI - config.FLOOR_HEIGHT,
-                config.DISP_WID,
+                config.WINDOW_HEIGHT - config.FLOOR_HEIGHT,
+                config.WINDOW_WIDTH,
                 config.FLOOR_HEIGHT,
             ),
         )
@@ -180,7 +180,7 @@ class Player:
 
         # draw obstacles
         for index in range(len(self.level.obstacles)):
-            if self.level.obstacles[index].x < config.DISP_WID + 1:
+            if self.level.obstacles[index].x < config.WINDOW_WIDTH + 1:
                 pygame.draw.rect(
                     game, self.level.colors[index], self.level.obstacles[index]
                 )

@@ -60,7 +60,7 @@ class Level:
         self.blocks = self.blocks.clip(min=0, max=config.HEIGHT_LEVELS)
 
         # Clear space at the beginning of the song
-        start_blocks = int(config.DISP_HEI / config.VELOCITY_X * blocks_per_sec)
+        start_blocks = int(config.WINDOW_HEIGHT / config.VELOCITY_X * blocks_per_sec)
         for i in range(start_blocks - start_blocks * 2 // 3):
             self.blocks[i] = 0  # free plain
         for i in range(
@@ -85,7 +85,7 @@ class Level:
         self.obstacles = []
         self.color = pygame.Color(random.choice(list(colors.neon.values())))
         self.colors = []
-        floor_pos = config.DISP_HEI - config.FLOOR_HEIGHT
+        floor_pos = config.WINDOW_HEIGHT - config.FLOOR_HEIGHT
         block_hei = floor_pos / config.HEIGHT_LEVELS * config.RELATIVE_BLOCK_HEIGHT
         block_wid = config.VELOCITY_X / blocks_per_sec
         for index, block in enumerate(self.blocks):
